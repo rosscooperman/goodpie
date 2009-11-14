@@ -1,0 +1,64 @@
+html {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  text-align: center;
+  color: #333;
+  background-color: #beefff;
+  font-family: "Trebuchet MS",Helvetica,sans-serif;
+  font-size: 14px;
+}
+
+body {
+  width: 800px;
+  margin: 50px auto;
+  text-align: left;
+  padding: 50px;
+  background-color: white;
+}
+
+h1 {
+  color: #2a4750;
+}
+
+a {
+  color: #a80b0b;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: #a80b0b;
+}
+
+#projects {
+  border-top: 1px solid #aaa;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#projects li {
+  border-bottom: 1px solid #aaa;
+  margin: 0;
+  padding: 1em;
+  background-color: #effbff;
+}
+
+#projects .name {
+  color: #2a4750;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#projects .links {
+  color: #aaa;
+  font-size: 1.1em;
+}
+
+#projects .links a {
+  font-size: 0.8em;
+}

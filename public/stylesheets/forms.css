@@ -1,0 +1,49 @@
+form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+
+form li {
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  padding: 0 0 0 2px;
+}
+
+input, textarea {
+  font-size: 1.3em  ;
+}
+
+textarea.step {
+  width: 100%;
+  height: 10em;
+}
+
+.fieldWithErrors label {
+  color: red;
+}
+
+#errorExplanation {
+  border: 1px solid red;
+  padding: 10px;
+}
+
+#errorExplanation h2 {
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+
+#errorExplanation ul {
+  margin: 0;
+}
+
+#errorExplanation p {
+  margin: 10px 0;
+}
