@@ -1,0 +1,6 @@
+config/database.yml
+*.tmproj
+tmp
+log
+db/*.db
+db/schema.rb
