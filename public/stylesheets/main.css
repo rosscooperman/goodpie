@@ -69,11 +69,11 @@ a:hover.button {
 }
 
 #projects li.failed, #projects li.clonefail {
-  background-color: #fcc;
+  background-color: #fdd;
 }
 
 #projects li.success {
-  background-color: #cfc;
+  background-color: #dfd;
 }
 
 #projects .name {
