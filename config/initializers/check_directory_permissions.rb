@@ -14,6 +14,6 @@ unless File.writable?(BUILD_DIRECTORY)
   raise "no write permissions on directory '#{BUILD_DIRECTORY}'"
 end
 
-unless `git --version`.match /1\.6/
+unless `sh -ilc 'git --version'`.match /1\.6/
   raise "command 'git' not found in PATH or not version 1.6+"
 end
