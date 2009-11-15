@@ -1,4 +1,4 @@
-== Goodpie: Yet Another Continuous Integration Server
+h1. Goodpie: Yet Another Continuous Integration Server
 
 Why?  Well, because the other ones suck.  Ok, maybe they don't suck but continuous integration
 tends to be quite personal.  You have a specific set of things that you want it to do, usually
