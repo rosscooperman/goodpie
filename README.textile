@@ -1,12 +1,8 @@
 h1. Goodpie: Yet Another Continuous Integration Server
 
-Why?  Well, because the other ones suck.  Ok, maybe they don't suck but continuous integration
-tends to be quite personal.  You have a specific set of things that you want it to do, usually
-not a lot of things, and you want it to do them really fast.  Seriously, those builds take long
-enough all on their own.  Why add to the grief?
+Why?  Well, because the other ones suck.  Ok, maybe they don't suck but continuous integration tends to be quite personal.  You have a specific set of things that you want it to do, usually not a lot of things, and you want it to do them really fast.  Seriously, those builds take long enough all on their own.  Why add to the grief?
 
-So, this one is mine and it does the things I want it to do.  If it does the things you want it
-to do as well, hooray!  If not, here are some others I like (but not as much, obviously):
+So, this one is mine and it does the things I want it to do.  If it does the things you want it to do as well, hooray!  If not, here are some others I like (but not as much, obviously):
 
-* Integrity [http://integrityapp.com]
-* Hudson [http://hudson.dev.java.net]
+* Integrity ["http://integrityapp.com":http://integrityapp.com]
+* Hudson ["http://hudson.dev.java.net":http://hudson.dev.java.net]
