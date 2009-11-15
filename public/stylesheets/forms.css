@@ -22,7 +22,6 @@ input, textarea {
 
 input.disabled, textarea.disabled {
   color: #666;
-  background-color: #f3f3f3;
 }
 
 textarea.step {

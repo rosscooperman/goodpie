@@ -50,7 +50,7 @@ class Project < ActiveRecord::Base
 
   # method to just do the repository cloning (this can be stubbed out for testing)
   def real_clone_repository
-    IO.popen("cd #{BUILD_DIRECTORY} && git clone #{self.repo} #{self.repo_name}") do |io|
+    IO.popen("cd #{BUILD_DIRECTORY} && sh -ilc 'git clone #{self.repo} #{self.repo_name}'") do |io|
       until io.eof?
         io.readline
       end
