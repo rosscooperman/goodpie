@@ -4,5 +4,5 @@ Why?  Well, because the other ones suck.  Ok, maybe they don't suck but continuo
 
 So, this one is mine and it does the things I want it to do.  If it does the things you want it to do as well, hooray!  If not, here are some others I like (but not as much, obviously):
 
-* Integrity ["http://integrityapp.com":http://integrityapp.com]
-* Hudson ["http://hudson.dev.java.net":http://hudson.dev.java.net]
+* Integrity \["http://integrityapp.com":http://integrityapp.com\]
+* Hudson \["http://hudson.dev.java.net":http://hudson.dev.java.net\]
