@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(params[:project])
-    if @project.save!
+    if @project.save
       flash[:notice] = "Project created successfully"
       redirect_to projects_path
     else
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update_attributes(params[:project])
-    if @project.save!
+    if @project.save
       flash[:notice] = "Project updated successfully"
       redirect_to projects_path
     else

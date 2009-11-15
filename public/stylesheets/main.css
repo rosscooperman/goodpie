@@ -34,6 +34,21 @@ a:hover {
   background-color: #a80b0b;
 }
 
+a.button {
+  display: block;
+  margin: 5px 0;
+  padding: 3px 0;
+  text-align: center;
+  background-color: #a80b0b;
+  border: 1px solid #a80b0b;
+  color: white;
+}
+
+a:hover.button {
+  background-color: white;
+  color: #a80b0b;
+}
+
 #projects {
   border-top: 1px solid #aaa;
   list-style: none;
@@ -42,10 +57,23 @@ a:hover {
 }
 
 #projects li {
+  position: relative;
   border-bottom: 1px solid #aaa;
   margin: 0;
   padding: 1em;
   background-color: #effbff;
+}
+
+#projects li.new {
+  background-color: #eee;
+}
+
+#projects li.failed, #projects li.clonefail {
+  background-color: #fcc;
+}
+
+#projects li.success {
+  background-color: #cfc;
 }
 
 #projects .name {
@@ -55,8 +83,17 @@ a:hover {
 }
 
 #projects .links {
+  position: absolute;
+  top: 1em;
+  right: 1em;
   color: #aaa;
   font-size: 1.1em;
+}
+
+#projects .status {
+  color: #aaa;
+  font-size: 0.8em;
+  font-style: italic;
 }
 
 #projects .links a {

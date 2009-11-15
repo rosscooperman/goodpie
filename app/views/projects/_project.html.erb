@@ -4,7 +4,8 @@
 <ul>
   <li>
     <%= f.label :name, "* Name" %>
-    <%= f.text_field :name, :size => 50 %>
+    <%= f.text_field :name, :size => 50, :disabled => @disable_name ||= false,
+                     :class => (@disable_name) ? "disabled" : "" %>
   </li>
   <li>
     <%= f.label :repo, "* Git Repository URL" %>
@@ -21,7 +22,7 @@
     </li>
   <% end %>
   <li>
-    <%= f.submit submit_text ||= "Create Project" %>
+    <%= f.submit @submit_text ||= "Create Project" %>
     <%= link_to "Cancel", projects_path, :confirm => "Are you sure?" %>
   </li>
 </ul>

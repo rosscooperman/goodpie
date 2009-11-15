@@ -20,6 +20,11 @@ input, textarea {
   font-size: 1.3em  ;
 }
 
+input.disabled, textarea.disabled {
+  color: #666;
+  background-color: #f3f3f3;
+}
+
 textarea.step {
   width: 100%;
   height: 10em;

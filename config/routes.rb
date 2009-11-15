@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :projects
-  # map.resources :builds
+  map.resources :projects do |project|
+    project.resources :builds
+  end
 
   map.root :controller => "projects"
 end

@@ -3,9 +3,11 @@
 <% @projects.each do |p| -%>
   <li class="<%= p.status %>">
     <div class="name"><%= p.name %></div>
+    <div class="status"><%= p.status_message %></div>
     <div class="links">
       <%= link_to "delete", project_path(p), :method => :delete, :confirm => 'Are you sure?' %> |
       <%= link_to "edit", edit_project_path(p) %>
+      <%= link_to "build", new_project_build_path(p), :class => 'button' %>
     </div>
   </li>
 <% end -%>

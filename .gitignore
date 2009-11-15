@@ -4,3 +4,4 @@ tmp
 log
 db/*.sqlite?
 db/schema.rb
+build
