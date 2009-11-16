@@ -1,7 +1,7 @@
 class Build < ActiveRecord::Base
   belongs_to :project
 
-  def go
+  def go!
     exit_code = do_build
     if exit_code == 0
       project.update_attributes(:status => 'success')
@@ -13,13 +13,28 @@ class Build < ActiveRecord::Base
 
   private
 
-  def do_build
+  def write_script
     repo_dir = File.join(BUILD_DIRECTORY, self.project.repo_name)
-    IO.popen("cd #{repo_dir} && #{self.project.steps.first.command}") do |io|
+    filename = File.join(RAILS_ROOT, 'tmp', 'build.sh')
+    File.open(filename, "w+") do |file|
+      file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
+    end
+    File.chmod(0755, filename)
+    filename
+  end
+
+  def real_do_build
+    output = ''
+    IO.popen("sh #{write_script} 2>&1") do |io|
       until io.eof?
-        io.readline
+        output << io.readline
       end
+      update_attribute(:output, output)
     end
     $?
+  end
+
+  def do_build
+    real_do_build
   end
 end
