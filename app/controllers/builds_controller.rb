@@ -5,14 +5,11 @@ class BuildsController < ApplicationController
     build = project.builds.create
     if !build.valid?
       flash[:notice] = 'unable to create build'
-    elsif build.go!
-      flash[:notice] = 'build successful'
-      build.touch
+      redirect_to :back
     else
-      flash[:error] = 'build failed'
-      build.touch
+      build.go!
+      redirect_to project_build_path(project, build)
     end
-    redirect_to project_build_path(project, build)
   end
 
   def show

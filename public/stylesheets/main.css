@@ -69,11 +69,11 @@ a:hover.button {
 }
 
 #projects li.failed, #projects li.clonefail {
-  background-color: #fdd;
+  background-color: #fbb;
 }
 
 #projects li.success {
-  background-color: #dfd;
+  background-color: #bfb;
 }
 
 #projects .name {
@@ -91,7 +91,7 @@ a:hover.button {
 }
 
 #projects .status {
-  color: #aaa;
+  color: #555;
   font-size: 0.8em;
   font-style: italic;
 }

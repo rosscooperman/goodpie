@@ -10,3 +10,28 @@
   height: 500px;
   overflow: scroll;
 }
+
+#info {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #eee;
+  border: 1px solid #999;
+}
+
+#info.success {
+  background-color: #bfb;
+}
+
+#info.failed {
+  background-color: #fbb;
+}
+
+#info #name {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+#info #status {
+  color: #555;
+  font-style: italic;
+}

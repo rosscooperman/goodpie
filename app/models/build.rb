@@ -1,20 +1,36 @@
 class Build < ActiveRecord::Base
   belongs_to :project
 
+  # map of statuses to status messages
+  STATUS_MESSAGES = {
+    :queued     => "build has been queued",
+    :building   => "build is in progress",
+    :success    => "build was successful",
+    :failed     => "build was a failure"
+  }
+
+  # provide a human-readable version of status
+  def status_message
+    return "build status is unknown" if self.status.blank?
+    STATUS_MESSAGES[self.status.to_sym] || "build status is unknown"
+  end
+
+  def repo_dir
+    File.join(BUILD_DIRECTORY, self.project.repo_name)
+  end
+
   def go!
-    exit_code = do_build
-    if exit_code == 0
-      project.update_attributes(:status => 'success')
+    update_attribute(:status, "queued")
+    if do_build == 0
+      update_attribute(:status, "success")
     else
-      project.update_attributes(:status => 'failed')
+      update_attribute(:status, "failed")
     end
-    exit_code == 0
   end
 
   private
 
   def write_script
-    repo_dir = File.join(BUILD_DIRECTORY, self.project.repo_name)
     filename = File.join(RAILS_ROOT, 'tmp', 'build.sh')
     File.open(filename, "w+") do |file|
       file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
@@ -23,18 +39,22 @@ class Build < ActiveRecord::Base
     filename
   end
 
-  def real_do_build
+  def do_build
     output = ''
+    update_attribute(:status, "building")
+
+    # make sure the repository is where it should be
+    temp = `sh -ilc 'cd #{repo_dir} && git checkout #{self.project.branch} && git pull'`
+
     IO.popen("sh #{write_script} 2>&1") do |io|
       until io.eof?
         output << io.readline
       end
-      update_attribute(:output, output)
+      update_attributes(
+        :output => output,
+        :commit => `sh -ilc 'cd #{repo_dir} && git log -1 --pretty=format:"%h"'`
+      )
     end
     $?
-  end
-
-  def do_build
-    real_do_build
   end
 end

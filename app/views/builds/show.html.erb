@@ -2,4 +2,9 @@
   <%= stylesheet_link_tag "build" %>
 <% end %>
 
+<div id="info" class="<%= @build.status %>">
+  <div id="name">build <%= @build.id %> (commit <%= @build.commit %>)</div>
+  <div id="status"><%= @build.status_message %></div>
+</div>
+
 <div id="output"><%=h @build.output %></div>
