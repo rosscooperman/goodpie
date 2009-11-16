@@ -20,23 +20,11 @@ class Build < ActiveRecord::Base
   end
 
   def go!
-    update_attribute(:status, "queued")
-    if do_build == 0
-      update_attribute(:status, "success")
-    else
-      update_attribute(:status, "failed")
-    end
-  end
-
-  private
-
-  def write_script
-    filename = File.join(RAILS_ROOT, 'tmp', 'build.sh')
-    File.open(filename, "w+") do |file|
-      file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
-    end
-    File.chmod(0755, filename)
-    filename
+    self.send_later(:do_build)
+    update_attributes(
+      :status => "queued",
+      :commit => '??????'
+    )
   end
 
   def do_build
@@ -55,6 +43,22 @@ class Build < ActiveRecord::Base
         :commit => `sh -ilc 'cd #{repo_dir} && git log -1 --pretty=format:"%h"'`
       )
     end
-    $?
+
+    if $? == 0
+      update_attribute(:status, "success")
+    else
+      update_attribute(:status, "failed")
+    end
+  end
+
+  private
+
+  def write_script
+    filename = File.join(RAILS_ROOT, 'tmp', 'build.sh')
+    File.open(filename, "w+") do |file|
+      file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
+    end
+    File.chmod(0755, filename)
+    filename
   end
 end
