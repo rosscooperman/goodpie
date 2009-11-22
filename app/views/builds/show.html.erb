@@ -3,8 +3,15 @@
 <% end %>
 
 <div id="info" class="<%= @build.status %>">
-  <div id="name">build <%= @build.id %> (commit <%= @build.commit %>)</div>
-  <div id="status"><%= @build.status_message %></div>
+  <div id="name">build <%= "#{@build.id} #{@build.status_message}" %></div>
+  <div id="log"><%=h @build.log %></div>
+  <div id="details">
+    by: <%=h @build.committer %> |
+    <%= nice_time(@build.committed_at) %> |
+    <%=h @build.commit %>
+  </div>
 </div>
 
 <div id="output"><%=h @build.output %></div>
+
+<%= link_to "Back to projects", projects_path %>

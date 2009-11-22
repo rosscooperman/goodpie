@@ -10,6 +10,7 @@ unless RAILS_ENV == "test"
     pid = fork
     if pid.nil?
       $0 = 'Delayed job: worker'
+      Delayed::Job.const_set("MAX_ATTEMPTS", 1)
       Delayed::Worker.new.start
       exit(0)
     else

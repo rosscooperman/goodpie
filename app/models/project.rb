@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
     :new        => "project has never been built",
     :cloned     => "repository has been successfully cloned",
     :clonefail  => "failed to clone repository",
+    :building   => "a build is currently in progress",
     :success    => "last build was successful",
     :failed     => "last build was a failure"
   }

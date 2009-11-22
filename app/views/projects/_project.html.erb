@@ -13,7 +13,7 @@
   </li>
   <li>
     <%= f.label :branch, "* Branch to Track" %>
-    <%= f.text_field :branch, :size => 20 %>
+    <%= f.text_field :branch, :size => 20, :disabled => true, :class => "disabled" %>
   </li>
   <% f.fields_for :steps do |sf| %>
     <li>
