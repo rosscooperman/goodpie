@@ -1,7 +1,14 @@
+# Rails "stuff"
 config/database.yml
-*.tmproj
 tmp
 log
 db/*.sqlite?
 db/schema.rb
 build
+
+# IDE "stuff"
+*.tmproj
+
+# do not want capistrano "stuff" in the repository
+Capfile
+config/deploy*
