@@ -33,6 +33,7 @@ class Build < ActiveRecord::Base
   def do_build
     output = ''
     update_attribute(:status, "building")
+    project.update_attribute(:status, "building")
 
     # make sure the repository is where it should be
     temp = `sh -ilc 'cd #{repo_dir} && git checkout #{self.project.branch} && git pull'`
@@ -56,6 +57,7 @@ class Build < ActiveRecord::Base
     end
 
     self.status = ($? == 0) ? "success" : "failed"
+    project.update_attribute(:status, self.status)
     save!
   end
 
