@@ -39,6 +39,11 @@ class Project < ActiveRecord::Base
     self.name.gsub(/ /, '_').downcase
   end
 
+  # fetch only the build with the largest id (most recent)
+  def max_build
+    builds.first(:order => 'id DESC', :select => 'id')
+  end
+
   #
   # PRIVATE METHODS
   #

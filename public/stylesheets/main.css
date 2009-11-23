@@ -76,10 +76,19 @@ a:hover.button {
   background-color: #bfb;
 }
 
-#projects .name {
+#projects .name, #projects .name a {
   color: #2a4750;
   font-size: 2em;
   font-weight: bold;
+}
+
+#projects .name a {
+  font-size: 1em;
+}
+
+#projects .name a:hover {
+  background-color: #2a4750;
+  color: white;
 }
 
 #projects .links {

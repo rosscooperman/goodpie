@@ -2,7 +2,11 @@
 <ul id="projects">
 <% @projects.each do |p| -%>
   <li class="<%= p.status %>">
-    <div class="name"><%= p.name %></div>
+    <% if build = p.max_build %>
+      <div class="name"><%= link_to h(p.name), project_build_path(p, p.max_build) %></div>
+    <% else %>
+      <div class="name"><%= h(p.name) %></div>
+    <% end %>
     <div class="status"><%= p.status_message %></div>
     <div class="links">
       <%= link_to "delete", project_path(p), :method => :delete, :confirm => 'Are you sure?' %> |
