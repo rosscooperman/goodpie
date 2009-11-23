@@ -17,6 +17,7 @@ unless RAILS_ENV == "test"
   end
 
   unless `sh -ilc 'git --version'`.match /1\.6/
-    raise "command 'git' not found in PATH or not version 1.6+"
+    raise "command 'git' not found in PATH or not version 1.6+ -- PATH => " +
+          `sh -ilc 'echo $PATH'`
   end
 end
