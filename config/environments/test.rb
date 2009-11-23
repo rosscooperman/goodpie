@@ -22,9 +22,9 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem "thoughtbot-shoulda",      :lib => "shoulda"
-config.gem "thoughtbot-factory_girl", :lib => "factory_girl"
-config.gem "mocha"
+config.gem "shoulda",      :version => ">=2.10"
+config.gem "factory_girl", :version => ">=1.2"
+config.gem "mocha",        :version => ">=0.9"
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,
