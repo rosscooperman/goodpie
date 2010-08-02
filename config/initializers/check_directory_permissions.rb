@@ -16,7 +16,8 @@ unless RAILS_ENV == "test"
     raise "no write permissions on directory '#{BUILD_DIRECTORY}'"
   end
 
-  unless `sh -ilc 'git --version'`.match /1\.6/
+  @git_version =  `sh -ilc 'git --version'`
+  unless @git_version.match /1\.[6-9]/
     raise "command 'git' not found in PATH or not version 1.6+ -- PATH => " +
           `sh -ilc 'echo $PATH'`
   end
