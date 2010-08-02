@@ -1,6 +1,6 @@
-<%= error_messages_for :project %>
+<% error_messages_for :project %>
 
-<% form_for @project do |f| %>
+<%= form_for @project do |f| %>
 <ul>
   <li>
     <%= f.label :name, "* Name" %>
@@ -16,7 +16,7 @@
     <%= hidden_field_tag "project[branch]", "master" %>
     <%= f.text_field :branch, :size => 20, :disabled => true, :class => "disabled" %>
   </li>
-  <% f.fields_for :steps do |sf| %>
+  <%= f.fields_for :steps do |sf| %>
     <li>
       <%= sf.label :command, "* Build Command" %>
       <%= sf.text_area :command, :class => 'step' %>

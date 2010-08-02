@@ -76,7 +76,7 @@ class Build < ActiveRecord::Base
   end
 
   def write_script
-    filename = File.join(RAILS_ROOT, 'tmp', 'build.sh')
+    filename = File.join(Rails.root, 'tmp', 'build.sh')
     File.open(filename, "w+") do |file|
       file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
     end

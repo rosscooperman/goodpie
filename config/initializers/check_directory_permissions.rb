@@ -1,7 +1,7 @@
-BUILD_DIRECTORY = File.join(RAILS_ROOT, 'build')
+BUILD_DIRECTORY = File.join(Rails.root, 'build')
 
 # do not do any of this in the test environment
-unless RAILS_ENV == "test"
+unless Rails.env == "test"
   # check to make sure build directory exists (or make it)
   unless File.exists?(BUILD_DIRECTORY)
     begin
