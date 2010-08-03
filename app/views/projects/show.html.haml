@@ -1,0 +1,5 @@
+%h2= @project.name
+
+%ol
+  - @project.builds.each do |build|
+    %li= link_to build_display(build), project_build_path(@project, build)

@@ -11,8 +11,10 @@ db/*.sqlite?
 db/schema.rb
 build
 
-# IDE "stuff"
+# Development environment"stuff"
 *.tmproj
+.rvmrc
+*.swp
 
 # do not want capistrano "stuff" in the repository
 Capfile

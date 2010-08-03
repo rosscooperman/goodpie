@@ -1,0 +1,10 @@
+#info{ :class => @build.status }
+  #name= "build #{@build.id} #{@build.status_message}"
+  #log= @build.log
+  #details
+    = "by: #{@build.committer}"
+    = nice_time(@build.committed_at)
+    = @build.commit
+
+#output
+  = @build.output

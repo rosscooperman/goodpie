@@ -10,4 +10,8 @@ module ApplicationHelper
       time.strftime "%x"
     end
   end
+
+  def build_display(build)
+    "#{build.commit[0,6]}(#{build.id})"
+  end
 end

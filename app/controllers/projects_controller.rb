@@ -42,4 +42,8 @@ class ProjectsController < ApplicationController
     end
     redirect_to projects_path
   end
+
+  def show
+    @project = Project.find(params[:id])
+  end
 end
