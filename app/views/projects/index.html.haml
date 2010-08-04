@@ -1,8 +1,9 @@
+%h2 All Projects
 %ul#projects
   - @projects.each do |p|
     %li{:class => [p.status] }
       - if build = p.max_build
-        .name= link_to p.name, project_build_path(p, p.max_build)
+        .name= link_to p.name, p
       - else
         .name= p.name
       .status= p.status_message

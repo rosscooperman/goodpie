@@ -39,6 +39,13 @@ class Project < ActiveRecord::Base
     self.name.gsub(/ /, '_').downcase
   end
 
+  def github_url
+    @url = self.repo.split(/[@:\/\.]/);
+    @user = @url[3];
+    @project = @url[4];
+    "https://github.com/#{@user}/#{@project}"
+  end
+
   # fetch only the build with the largest id (most recent)
   def max_build
     builds.first(:order => 'id DESC', :select => 'id')

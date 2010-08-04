@@ -40,3 +40,36 @@
   color: #999;
   font-size: 0.9em;
 }
+#build-list {
+  border-top:1px solid #eee;
+}
+
+#build-list li{
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+  height:20px;
+  line-height:20px;
+}
+#build-list .status{
+  margin:0 10px;
+}
+#build-list .status img{
+  vertical-align:middle
+}
+#build-list .commit-link{ 
+  font-family:monospace;
+  font-size:10px;
+  font-weight:normal;
+}
+#build-list .commit-link a{
+  color:#333;
+}
+#build-list .commit-link a:hover {
+  text-decoration:underline;
+  background:none;
+}
+#build-list .build-time{
+  float:right;
+  font-size:12px;
+  color:#aaa;
+}

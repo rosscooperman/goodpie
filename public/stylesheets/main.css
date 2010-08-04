@@ -20,40 +20,21 @@ body{
   -webkit-box-shadow: 2px 2px 5px #ccc;
 }
 
-h1{
-  color:#ddd;
-  cursor:default;
-  float:left;
-  position:relative;
-  left:-20px;
-  top:3em;
-  font-size:5em;
-  margin:0 !important;
-  z-index:-1;
-  width:0;
-  -webkit-transform: rotate(-90deg); 
-  -moz-transform: rotate(-90deg); 
-}
 
 h2 {
   color:#2A4750;
   font-weight:bold;
-  font-size:2em;
-  border-bottom:1px solid #eee;
-  margin-bottom:.5em;
-  padding-bottom:.5em;
+  font-size:3em;
+  margin-bottom:1em;
 }
 
-ol {
-  list-style-type:decimal;
-}
+
 #page > *{
   margin-left:80px;
   margin-right:80px;
 }
 a {
   color: #a80b0b;
-  font-weight: bold;
   font-size: 1.2em;
   text-decoration: none;
 }
