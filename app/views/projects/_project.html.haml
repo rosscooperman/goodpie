@@ -10,10 +10,15 @@
       = f.label :branch, "* Branch to Track" 
       = hidden_field_tag "project[branch]", "master" 
       = f.text_field :branch, :size => 20, :disabled => true, :class => "disabled" 
-    = f.fields_for :steps do |sf| 
-      %li
-        = sf.label :command, "* Build Command"
-        = sf.text_area :command, :class => 'step'
+    %ul
+      = f.fields_for :steps do |sf| 
+        %li
+          = sf.label :command, "* Build Command"
+          = sf.text_field :command, :class => 'step'
+      
     %li
       = f.submit @submit_text ||= "Create Project" 
       = link_to "Cancel", projects_path, :confirm => "Are you sure?" 
+
+%form{:action => "/projects/1/steps", :method => "POST"}
+  %input{:type => 'submit'}

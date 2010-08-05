@@ -5,6 +5,7 @@ gem "grit", '>=2.0.0'
 gem "delayed_job", '>=2.1.0.pre'
 gem "chronic", '>=0.2'
 gem "haml"
+gem 'awesome_print', :require => 'ap'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

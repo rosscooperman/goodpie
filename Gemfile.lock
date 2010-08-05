@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.0.rc)
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
+    awesome_print (0.2.1)
     builder (2.1.2)
     chronic (0.2.3)
       hoe (>= 1.2.1)
@@ -85,6 +86,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   chronic (>= 0.2)
   delayed_job (>= 2.1.0.pre)
   grit (>= 2.0.0)

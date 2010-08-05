@@ -80,7 +80,11 @@ class Build < ActiveRecord::Base
   def write_script
     filename = File.join(Rails.root, 'tmp', 'build.sh')
     File.open(filename, "w+") do |file|
-      file << "#!/bin/sh\ncd #{repo_dir}\n#{self.project.steps.first.command}"
+      file << "#!/bin/sh\ncd #{repo_dir}\n"
+      self.project.steps.each do |step|
+        file << "echo \"$ #{step.command}\"\n"
+        file <<"#{step.command}\n"
+      end
     end
     File.chmod(0755, filename)
     filename

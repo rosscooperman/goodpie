@@ -1,6 +1,7 @@
 Goodpie::Application.routes.draw do |map|
   map.resources :projects do |project|
     project.resources :builds
+    project.resources :steps
   end
 
   map.root :controller => "projects"
