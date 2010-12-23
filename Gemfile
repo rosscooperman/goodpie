@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails'
 gem "grit", '>=2.0.0'
 gem "delayed_job", '>=2.1.0.pre'
 gem "chronic", '>=0.2'
