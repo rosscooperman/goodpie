@@ -77,7 +77,7 @@ class Project < ActiveRecord::Base
       self.status = 'cloned'
     else
       self.status = 'clonefail'
-      self.errors.add_to_base("unable to clone the specified repository")
+      self.errors.add(:base, "unable to clone the specified repository")
       return false
     end
   end
