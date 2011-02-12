@@ -11,6 +11,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
+  gem "shoulda-matchers"
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'launchy'

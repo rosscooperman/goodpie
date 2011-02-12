@@ -125,6 +125,7 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
+    shoulda-matchers (1.0.0.beta1)
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
@@ -151,4 +152,5 @@ DEPENDENCIES
   launchy
   rails
   rspec-rails (~> 2.4)
+  shoulda-matchers
   sqlite3-ruby
